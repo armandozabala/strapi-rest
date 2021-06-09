@@ -3,9 +3,9 @@ module.exports = ({ env }) => ({
   upload: {
     provider: 'cloudinary',
     providerOptions: {
-      cloud_name: env('www-armandozabala-com'),
-      api_key: env('472993854717965'),
-      api_secret: env('cMIkmdenzUScHh64BAtsSjzcrMg'),
+      cloud_name: env('CLOUDINARY_NAME'),
+      api_key: env('CLOUDINARY_KEY'),
+      api_secret: env('CLOUDINARY_SECRET'),
     },
     actionOptions: {
       upload: {},
