@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pets",
+  "info": {
+    "name": "Pets",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "idType": {
+      "model": "type"
+    },
+    "idPersons": {
+      "via": "pets",
+      "collection": "persons"
+    },
+    "photo": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

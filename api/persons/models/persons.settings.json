@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "persons",
+  "info": {
+    "name": "Persons",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "birthdate": {
+      "type": "datetime"
+    },
+    "pets": {
+      "via": "idPersons",
+      "model": "pets"
+    },
+    "idUser": {
+      "model": "users"
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "picture": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}
